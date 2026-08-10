@@ -35,7 +35,7 @@ The driver communicates with the TF-Luna module via a standard UART protocol. Th
 ## 4. Build System Integration (CMake)
 The driver is designed as a modular static library. To integrate it into an existing STM32 project:
 
-1. Allocate the source files (`tf_luna.c`, `tf_luna.h`, `CMakeLists.txt`) in the standard directory structure: `linxDrivers/TFLuna/`.
+1. Allocate the source files (`tf_luna.c`, `tf_luna.h`, `CMakeLists.txt`) in the standard directory structure: `linxDriver/Sensors/TFLuna/`.
 2. The internal `CMakeLists.txt` defines the static library and resolves dependencies:
 ```cmake
 #We create a static library using the .c source file.
