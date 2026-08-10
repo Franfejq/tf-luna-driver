@@ -46,7 +46,7 @@ target_include_directories(TFLuna_Driver PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Inc)
 
 #If we end up using other libraries, we'll include it as well, just in case.
 target_include_directories(TFLuna_Driver PRIVATE stm32cubemx)
-
+```
 3.Append the library to the root compilation sequence in the main CMakeLists.txt:
 ```CMake
 
