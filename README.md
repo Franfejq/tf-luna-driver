@@ -38,15 +38,14 @@ The driver is designed as a modular static library. To integrate it into an exis
 1. Allocate the source files (`tf_luna.c`, `tf_luna.h`, `CMakeLists.txt`) in the standard directory structure: `linxDrivers/TFLuna/`.
 2. The internal `CMakeLists.txt` defines the static library and resolves dependencies:
    ```cmake
-   #We create a static library using the .c source file.
-   add_library(TFLuna_Driver STATIC Src/tf_luna.c)
+   #We create a static library using the .c source file.
+   add_library(TFLuna_Driver STATIC Src/tf_luna.c)
 
-   #We tell CMake where to find the library's headers.
-   target_include_directories(TFLuna_Driver PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Inc)
+   #We tell CMake where to find the library's headers.
+   target_include_directories(TFLuna_Driver PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Inc)
 
-   #If we end up using other libraries, we'll include it as well, just in case.
-   target_include_directories(TFLuna_Driver PRIVATE stm32cubemx)
-   ```
+   #If we end up using other libraries, we'll include it as well, just in case.
+   target_include_directories(TFLuna_Driver PRIVATE stm32cubemx)
 
 3. Append the library to the root compilation sequence in the main CMakeLists.txt:
    ```cmake
