@@ -68,6 +68,8 @@ The module transmits data in a 9-byte little-endian format.Frame Synchronization
 ## 6.1. Minimum Range (Dead Zone)
 The sensor exhibits a dead zone between 0 cm and 20 cm. Optical reflections within this range exceed the timing window of the internal processor, resulting in erratic or invalid data.
 
-## 6.2. Spatial Resolution and Multi-Path Errors (Ghost Readings)Due to the 2° beam divergence, the optical footprint expands relative to distance. If the beam is pointed at a corner or the edge of an object, the reflection is split across two different depths. The sensor averages these returns, yielding a "ghost reading" ($Dist_1 < Dist_{Output} < Dist_2$) that does not correlate to a physical surface.
+## 6.2. Spatial Resolution and Multi-Path Errors (Ghost Readings)
+Due to the 2° beam divergence, the optical footprint expands relative to distance. If the beam is pointed at a corner or the edge of an object, the reflection is split across two different depths. The sensor averages these returns, yielding a "ghost reading" ($Dist_1 < Dist_{Output} < Dist_2$) that does not correlate to a physical surface.
 
-## 6.3. Signal Attenuation and Dummy ValuesThe Amplitude data byte indicates signal reliability. If the optical return is critically weak (Amplitude < 100), the sensor defaults to a dummy distance output of 0 cm. Firmware implementations must evaluate the amplitude threshold prior to utilizing the distance parameter to prevent false collision triggers.
+## 6.3. Signal Attenuation and Dummy Values
+The Amplitude data byte indicates signal reliability. If the optical return is critically weak (Amplitude < 100), the sensor defaults to a dummy distance output of 0 cm. Firmware implementations must evaluate the amplitude threshold prior to utilizing the distance parameter to prevent false collision triggers.
